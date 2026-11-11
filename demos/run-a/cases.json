@@ -1,0 +1,1015 @@
+{
+  "schema_version": 1,
+  "purpose": "Proposal regression specifications, not executed app tests.",
+  "evidence_notice": "All titles, descriptions, metadata, and retrieval scores below are synthetic fixtures, not facts about real games. Each case's catalog is complete for that case. Historical reports were used only to motivate the policy.",
+  "conventions": {
+    "judgments": [
+      "supported",
+      "partially_supported",
+      "unsupported"
+    ],
+    "predicate_states": [
+      "supported",
+      "contradicted",
+      "unknown"
+    ],
+    "null_judgment": "Definitive judgment deferred because request interpretation requires clarification.",
+    "evidence_rule": "Use only the case's supplied catalog; description fields have synthetic publisher provenance; community tags are unverified.",
+    "partial_display": "Clearly state supported aspects and unknown gaps; never claim the whole request is fulfilled.",
+    "default_scope": "Same game, edition, and mode unless the request or evidence explicitly distinguishes them."
+  },
+  "cases": [
+    {
+      "id": "01_compound_all_supported",
+      "input": {
+        "request": "A cooperative underwater exploration game",
+        "catalog": [
+          {
+            "id": "A",
+            "title": "Synthetic A",
+            "evidence": [
+              {
+                "id": "A.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Two players cooperate to explore submerged ruins."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "A",
+            "judgment": "supported",
+            "predicates": {
+              "cooperative": "supported",
+              "underwater exploration": "supported"
+            },
+            "display": "recommend"
+          }
+        ]
+      },
+      "rationale": "One applicable passage entails both required qualities; exact keyword overlap is unnecessary."
+    },
+    {
+      "id": "02_one_aspect_dominates",
+      "input": {
+        "request": "A cooperative underwater exploration game",
+        "catalog": [
+          {
+            "id": "B",
+            "title": "Synthetic B",
+            "evidence": [
+              {
+                "id": "B.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Explore submerged ruins in a vast ocean. Discover reefs, dive deep, and explore more reefs."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "B",
+            "judgment": "partially_supported",
+            "predicates": {
+              "cooperative": "unknown",
+              "underwater exploration": "supported"
+            },
+            "display": "labeled_partial_alternative"
+          }
+        ]
+      },
+      "rationale": "Repeated exploration evidence cannot compensate for missing cooperation evidence."
+    },
+    {
+      "id": "03_explicit_contradiction",
+      "input": {
+        "request": "A cooperative underwater exploration game",
+        "catalog": [
+          {
+            "id": "C",
+            "title": "Synthetic C",
+            "evidence": [
+              {
+                "id": "C.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Explore submerged ruins. Single-player only; no cooperative mode exists."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "C",
+            "judgment": "unsupported",
+            "predicates": {
+              "cooperative": "contradicted",
+              "underwater exploration": "supported"
+            },
+            "display": "withhold"
+          }
+        ]
+      },
+      "rationale": "A mandatory contradiction overrides an otherwise strong match."
+    },
+    {
+      "id": "04_no_supported_predicates",
+      "input": {
+        "request": "A cooperative underwater exploration game",
+        "catalog": [
+          {
+            "id": "D",
+            "title": "Synthetic D",
+            "evidence": [
+              {
+                "id": "D.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "A thrilling journey of discovery and friendship."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "D",
+            "judgment": "unsupported",
+            "predicates": {
+              "cooperative": "unknown",
+              "underwater exploration": "unknown"
+            },
+            "display": "withhold"
+          }
+        ]
+      },
+      "rationale": "Marketing language does not establish multiplayer cooperation or an underwater setting; unsupported does not mean proven absent."
+    },
+    {
+      "id": "05_narrative_relation_missing",
+      "input": {
+        "request": "A romance whose central relationship ends tragically",
+        "catalog": [
+          {
+            "id": "E",
+            "title": "Synthetic E",
+            "evidence": [
+              {
+                "id": "E.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "The protagonist can date a companion. A separate historical chapter describes a city's destruction."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "E",
+            "judgment": "partially_supported",
+            "predicates": {
+              "romance": "supported",
+              "central relationship ends tragically": "unknown"
+            },
+            "display": "labeled_partial_alternative"
+          }
+        ]
+      },
+      "rationale": "Romance and a separate tragedy do not establish a tragic romantic ending."
+    },
+    {
+      "id": "06_narrative_relation_supported",
+      "input": {
+        "request": "A romance whose central relationship ends tragically",
+        "catalog": [
+          {
+            "id": "F",
+            "title": "Synthetic F",
+            "evidence": [
+              {
+                "id": "F.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "The central playable love story ends with the lovers permanently separated by one lover's death."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "F",
+            "judgment": "supported",
+            "predicates": {
+              "romance": "supported",
+              "central relationship ends tragically": "supported"
+            },
+            "display": "recommend"
+          }
+        ]
+      },
+      "rationale": "The description links the ending to the requested relationship."
+    },
+    {
+      "id": "07_related_word_wrong_sense",
+      "input": {
+        "request": "A life and social simulation",
+        "catalog": [
+          {
+            "id": "G",
+            "title": "Synthetic G",
+            "evidence": [
+              {
+                "id": "G.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Simulate electrical circuits and the physical behavior of falling objects."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "G",
+            "judgment": "unsupported",
+            "predicates": {
+              "life simulation": "unknown",
+              "social simulation": "unknown"
+            },
+            "display": "withhold"
+          }
+        ]
+      },
+      "rationale": "Physics simulation is not evidence of simulated daily lives or social relationships."
+    },
+    {
+      "id": "08_beyond_genres_accessibility",
+      "input": {
+        "request": "Turn-based tactics with remappable controls and screen-reader menus",
+        "catalog": [
+          {
+            "id": "H",
+            "title": "Synthetic H",
+            "evidence": [
+              {
+                "id": "H.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Combat proceeds in alternating tactical turns."
+              }
+            ],
+            "structured_fields": {
+              "controls_remappable": true,
+              "menus_screen_reader_supported": true
+            },
+            "structured_provenance": "synthetic publisher accessibility specification"
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "H",
+            "judgment": "supported",
+            "predicates": {
+              "turn-based tactics": "supported",
+              "remappable controls": "supported",
+              "screen-reader menus": "supported"
+            },
+            "display": "recommend"
+          }
+        ]
+      },
+      "rationale": "Typed authoritative catalog facts can establish narrow accessibility requirements."
+    },
+    {
+      "id": "09_tag_only_noisy",
+      "input": {
+        "request": "An action game with romance",
+        "catalog": [
+          {
+            "id": "I",
+            "title": "Synthetic I",
+            "evidence": [
+              {
+                "id": "I.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Fight enemies in real-time combat."
+              }
+            ],
+            "community_tags": [
+              "Romance",
+              "Romance",
+              "Romance"
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "I",
+            "judgment": "partially_supported",
+            "predicates": {
+              "action": "supported",
+              "romance": "unknown"
+            },
+            "display": "labeled_partial_alternative"
+          }
+        ]
+      },
+      "rationale": "Repeated unverified tags are clues, not independent proof. Explain that romance has tag-only evidence."
+    },
+    {
+      "id": "10_negation_silent",
+      "input": {
+        "request": "A farming game without combat",
+        "catalog": [
+          {
+            "id": "J",
+            "title": "Synthetic J",
+            "evidence": [
+              {
+                "id": "J.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Grow vegetables, tend orchards, and sell harvests."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "J",
+            "judgment": "partially_supported",
+            "predicates": {
+              "farming": "supported",
+              "no combat": "unknown"
+            },
+            "display": "labeled_partial_alternative"
+          }
+        ]
+      },
+      "rationale": "An omitted combat mention cannot prove its absence; any partial display must explicitly say combat absence is unverified."
+    },
+    {
+      "id": "11_negation_supported",
+      "input": {
+        "request": "A farming game without combat",
+        "catalog": [
+          {
+            "id": "K",
+            "title": "Synthetic K",
+            "evidence": [
+              {
+                "id": "K.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Grow crops and tend orchards. There is no combat in any mode."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "K",
+            "judgment": "supported",
+            "predicates": {
+              "farming": "supported",
+              "no combat": "supported"
+            },
+            "display": "recommend"
+          }
+        ]
+      },
+      "rationale": "An explicit absence statement covering the game satisfies the exclusion."
+    },
+    {
+      "id": "12_negation_violated",
+      "input": {
+        "request": "A farming game without combat",
+        "catalog": [
+          {
+            "id": "L",
+            "title": "Synthetic L",
+            "evidence": [
+              {
+                "id": "L.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Grow crops and fight monsters in required nighttime battles."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "L",
+            "judgment": "unsupported",
+            "predicates": {
+              "farming": "supported",
+              "no combat": "contradicted"
+            },
+            "display": "withhold"
+          }
+        ]
+      },
+      "rationale": "Do not relax an explicit exclusion to fill the result list."
+    },
+    {
+      "id": "13_scoped_negation_mode",
+      "input": {
+        "request": "A farming game I can play in a mode without combat",
+        "catalog": [
+          {
+            "id": "M",
+            "title": "Synthetic M",
+            "evidence": [
+              {
+                "id": "M.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Standard mode mixes crops and battles. Peaceful mode keeps farming and removes all combat."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "M",
+            "judgment": "supported",
+            "predicates": {
+              "farming": "supported",
+              "playable mode without combat": "supported"
+            },
+            "display": "recommend"
+          }
+        ],
+        "required_explanation": "Available in Peaceful mode; Standard mode includes combat."
+      },
+      "rationale": "Mode-specific evidence meets the user's mode-specific request; recommend Peaceful mode explicitly."
+    },
+    {
+      "id": "14_optional_preference",
+      "input": {
+        "request": "An offline puzzle game, preferably with crafting",
+        "catalog": [
+          {
+            "id": "N",
+            "title": "Synthetic N",
+            "evidence": [
+              {
+                "id": "N.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Solve puzzles entirely offline. There is no crafting system."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "N",
+            "judgment": "supported",
+            "predicates": {
+              "offline": "supported",
+              "puzzle": "supported",
+              "optional crafting": "contradicted"
+            },
+            "display": "recommend"
+          }
+        ]
+      },
+      "rationale": "A failed optional preference affects ordering and disclosure, not mandatory eligibility."
+    },
+    {
+      "id": "15_disjunction",
+      "input": {
+        "request": "A detective mystery or a farming simulator",
+        "catalog": [
+          {
+            "id": "O",
+            "title": "Synthetic O",
+            "evidence": [
+              {
+                "id": "O.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "A detective investigates a locked-room murder. No farming mechanics are included."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "O",
+            "judgment": "supported",
+            "predicates": {
+              "detective mystery": "supported",
+              "farming simulator": "contradicted",
+              "detective mystery OR farming simulator": "supported"
+            },
+            "display": "recommend"
+          }
+        ]
+      },
+      "rationale": "Explicit alternatives require one supported branch, not both."
+    },
+    {
+      "id": "16_ambiguous_word",
+      "input": {
+        "request": "A light strategy game",
+        "catalog": [
+          {
+            "id": "P",
+            "title": "Synthetic P",
+            "evidence": [
+              {
+                "id": "P.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "A strategy game built around complex economic planning. Install size: 200 MB."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "P",
+            "judgment": null,
+            "display": "clarify_before_recommending",
+            "conditional_judgments": [
+              {
+                "interpretation": "small download",
+                "judgment": "supported"
+              },
+              {
+                "interpretation": "low complexity",
+                "judgment": "unsupported"
+              }
+            ]
+          }
+        ],
+        "clarification": "By light, do you mean a small download or simple gameplay?"
+      },
+      "rationale": "'Light' could mean small download or low complexity. The overall judgment is withheld pending interpretation, not decided from title or similarity."
+    },
+    {
+      "id": "17_ambiguous_conjunction",
+      "input": {
+        "request": "A game with action and/or romance",
+        "catalog": [
+          {
+            "id": "Q",
+            "title": "Synthetic Q",
+            "evidence": [
+              {
+                "id": "Q.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Real-time combat drives every mission. No romantic storylines are included."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "Q",
+            "judgment": null,
+            "display": "clarify_before_recommending",
+            "conditional_judgments": [
+              {
+                "interpretation": "both action and romance",
+                "judgment": "unsupported"
+              },
+              {
+                "interpretation": "either action or romance",
+                "judgment": "supported"
+              }
+            ]
+          }
+        ],
+        "clarification": "Do you want both action and romance, or is either enough?"
+      },
+      "rationale": "Changing AND to OR changes eligibility; do not silently choose the interpretation that yields more results."
+    },
+    {
+      "id": "18_contradictory_request",
+      "input": {
+        "request": "A game with mandatory combat and absolutely no combat",
+        "catalog": [
+          {
+            "id": "R",
+            "title": "Synthetic R",
+            "evidence": [
+              {
+                "id": "R.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "The campaign requires combat encounters."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "R",
+            "judgment": null,
+            "display": "clarify_before_recommending"
+          }
+        ],
+        "request_status": "contradictory",
+        "clarification": "Should combat be required or excluded?"
+      },
+      "rationale": "The requirements cannot simultaneously hold in the same scope. Clarify before candidate ranking."
+    },
+    {
+      "id": "19_conflicting_catalog_evidence",
+      "input": {
+        "request": "A puzzle game playable offline",
+        "catalog": [
+          {
+            "id": "S",
+            "title": "Synthetic S",
+            "evidence": [
+              {
+                "id": "S.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "A puzzle game that can be played without a connection."
+              }
+            ],
+            "additional_evidence": [
+              {
+                "id": "S.requirements",
+                "provenance": "synthetic publisher requirements, same edition and date",
+                "text": "A continuous internet connection is required to play."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "S",
+            "judgment": "partially_supported",
+            "predicates": {
+              "puzzle": "supported",
+              "offline": "unknown"
+            },
+            "display": "labeled_partial_alternative"
+          }
+        ],
+        "required_explanation": "Offline availability is disputed by the supplied catalog sources."
+      },
+      "rationale": "Equally applicable conflicting evidence leaves offline play disputed; do not cherry-pick the favorable passage."
+    },
+    {
+      "id": "20_cross_edition_leakage",
+      "input": {
+        "request": "Four-player local co-op in the base edition",
+        "catalog": [
+          {
+            "id": "T",
+            "title": "Synthetic T",
+            "evidence": [
+              {
+                "id": "T.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Base edition supports one local player only."
+              }
+            ],
+            "additional_evidence": [
+              {
+                "id": "T.deluxe",
+                "edition": "Deluxe",
+                "provenance": "synthetic publisher catalog",
+                "text": "Deluxe edition supports four-player local co-op."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "T",
+            "judgment": "unsupported",
+            "predicates": {
+              "base edition four-player local co-op": "contradicted"
+            },
+            "display": "withhold"
+          }
+        ]
+      },
+      "rationale": "Evidence for another edition cannot establish a feature of the requested edition."
+    },
+    {
+      "id": "21_negated_source_language",
+      "input": {
+        "request": "A horror game",
+        "catalog": [
+          {
+            "id": "U",
+            "title": "Synthetic U",
+            "evidence": [
+              {
+                "id": "U.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "A cheerful puzzle adventure, not a horror game. It contains no horror themes."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "U",
+            "judgment": "unsupported",
+            "predicates": {
+              "horror": "contradicted"
+            },
+            "display": "withhold"
+          }
+        ]
+      },
+      "rationale": "A literal occurrence of a desired word inside a denial is contrary evidence."
+    },
+    {
+      "id": "22_empty_catalog",
+      "input": {
+        "request": "A rhythm game about astronomy",
+        "catalog": []
+      },
+      "expected": {
+        "judgments": [],
+        "result_status": "no_supported_matches",
+        "required_explanation": "No matching evidence is available in this catalog."
+      },
+      "rationale": "An empty searchable catalog supports no recommendation, without proving no such game exists."
+    },
+    {
+      "id": "23_batch_quality_no_padding",
+      "input": {
+        "request": "A cooperative underwater exploration game",
+        "catalog": [
+          {
+            "id": "V",
+            "title": "Synthetic V",
+            "evidence": [
+              {
+                "id": "V.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Two players cooperate to explore submerged ruins."
+              }
+            ]
+          },
+          {
+            "id": "W",
+            "title": "Synthetic W",
+            "evidence": [
+              {
+                "id": "W.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Explore an underwater cave network."
+              }
+            ]
+          },
+          {
+            "id": "X",
+            "title": "Synthetic X",
+            "evidence": [
+              {
+                "id": "X.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "A single-player-only underwater exploration game."
+              }
+            ]
+          },
+          {
+            "id": "Y",
+            "title": "Synthetic Y",
+            "evidence": [
+              {
+                "id": "Y.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "An exciting adventure with friends."
+              }
+            ]
+          }
+        ],
+        "requested_count": 5,
+        "retrieval_scores": {
+          "V": 0.6,
+          "W": 0.9,
+          "X": 0.99,
+          "Y": 0.98
+        }
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "V",
+            "judgment": "supported",
+            "predicates": {
+              "cooperative": "supported",
+              "underwater exploration": "supported"
+            },
+            "display": "recommend"
+          },
+          {
+            "candidate_id": "W",
+            "judgment": "partially_supported",
+            "predicates": {
+              "cooperative": "unknown",
+              "underwater exploration": "supported"
+            },
+            "display": "labeled_partial_alternative"
+          },
+          {
+            "candidate_id": "X",
+            "judgment": "unsupported",
+            "predicates": {
+              "cooperative": "contradicted",
+              "underwater exploration": "supported"
+            },
+            "display": "withhold"
+          },
+          {
+            "candidate_id": "Y",
+            "judgment": "unsupported",
+            "predicates": {
+              "cooperative": "unknown",
+              "underwater exploration": "unknown"
+            },
+            "display": "withhold"
+          }
+        ],
+        "recommended_ids": [
+          "V"
+        ],
+        "partial_alternative_ids": [
+          "W"
+        ],
+        "withheld_ids": [
+          "X",
+          "Y"
+        ],
+        "must_fill_requested_count": false
+      },
+      "rationale": "Judge every candidate in the returned batch. Very high retrieval scores cannot promote unsupported candidates."
+    },
+    {
+      "id": "24_renaming_paraphrase_invariance",
+      "input": {
+        "request": "Explore submerged ruins together with another player",
+        "catalog": [
+          {
+            "id": "Z",
+            "title": "Synthetic Gloomy Romance War",
+            "evidence": [
+              {
+                "id": "Z.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Two players cooperate to explore submerged ruins."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "Z",
+            "judgment": "supported",
+            "predicates": {
+              "cooperative": "supported",
+              "underwater exploration": "supported"
+            },
+            "display": "recommend"
+          }
+        ],
+        "same_judgment_as": "01_compound_all_supported"
+      },
+      "rationale": "Paraphrasing the query and replacing the title with unrelated genre words preserves case 01's evidence judgment."
+    },
+    {
+      "id": "25_compound_absence_only",
+      "input": {
+        "request": "No combat and no mandatory online connection",
+        "catalog": [
+          {
+            "id": "AA",
+            "title": "Synthetic AA",
+            "evidence": [
+              {
+                "id": "AA.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "There is no combat. A continuous internet connection is required."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "AA",
+            "judgment": "unsupported",
+            "predicates": {
+              "no combat": "supported",
+              "no mandatory online connection": "contradicted"
+            },
+            "display": "withhold"
+          }
+        ]
+      },
+      "rationale": "Exclusion-only requests still have predicates; support for one exclusion cannot mask violation of another."
+    },
+    {
+      "id": "26_separate_passages_same_scope",
+      "input": {
+        "request": "A cooperative underwater exploration game",
+        "catalog": [
+          {
+            "id": "AB",
+            "title": "Synthetic AB",
+            "evidence": [
+              {
+                "id": "AB.description",
+                "field": "description",
+                "provenance": "synthetic publisher catalog",
+                "text": "Explore submerged ruins in the campaign."
+              }
+            ],
+            "additional_evidence": [
+              {
+                "id": "AB.mode",
+                "provenance": "synthetic publisher catalog, same edition",
+                "text": "The entire campaign supports two cooperating players."
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "judgments": [
+          {
+            "candidate_id": "AB",
+            "judgment": "supported",
+            "predicates": {
+              "cooperative": "supported",
+              "underwater exploration": "supported"
+            },
+            "display": "recommend"
+          }
+        ]
+      },
+      "rationale": "Evidence may combine across applicable passages; requiring every feature in one passage would cause false negatives."
+    }
+  ]
+}

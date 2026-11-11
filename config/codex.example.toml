@@ -1,0 +1,5 @@
+# Replace /ABSOLUTE/PATH/Agent-Toolkit with your checkout's actual path.
+# Add this table to the client's config; preserve unrelated settings.
+[mcp_servers.prompt_history]
+command = "/ABSOLUTE/PATH/Agent-Toolkit/.venv/bin/python"
+args = ["/ABSOLUTE/PATH/Agent-Toolkit/server/history_server.py"]

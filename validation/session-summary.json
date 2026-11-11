@@ -1,0 +1,904 @@
+[
+  {
+    "session": "demos/run-a/checker-v1",
+    "thread_id": "01a1c628-ca37-7121-a863-7d6ecf56632d",
+    "exit_code": 0,
+    "protected_unchanged": true,
+    "transcript_sha256": "9355e57fc10748003a78798c4bbd192e07640a24539155b95be825c7225fdbdf",
+    "incomplete_event_lines": 0,
+    "skill_reads": [
+      "/bin/zsh -lc 'cat .agents/skills/fix-the-pattern/SKILL.md'"
+    ],
+    "mcp_calls": [
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "repetitive explanation",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "tragic romance",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "hardcoding BattleBit Sims",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "batch simple complex",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "aspect weaknesses deduplicated",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "repeats explanations",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      }
+    ]
+  },
+  {
+    "session": "demos/run-a/checker-v2",
+    "thread_id": "01a1c62c-e82c-7320-8786-20c6f3dd9caa",
+    "exit_code": 0,
+    "protected_unchanged": true,
+    "transcript_sha256": "96f8337a6602c36acecbc759d8f9bf161290daa06b0f3e6e816b662bfb74c775",
+    "incomplete_event_lines": 0,
+    "skill_reads": [
+      "/bin/zsh -lc 'cat /Users/mook/Documents/GitHub/Agent-Toolkit/.agents/skills/fix-the-pattern/SKILL.md'"
+    ],
+    "mcp_calls": [
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "hardcode hardcoding hard-code",
+          "speaker": "user",
+          "limit": 3
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "tragic",
+          "speaker": "user",
+          "limit": 3
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "repetitive",
+          "speaker": "all",
+          "limit": 3
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "ranking",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "tragedy",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "repeated aspect",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      }
+    ]
+  },
+  {
+    "session": "demos/run-a/checker-v3",
+    "thread_id": "01a1c62f-d29d-7750-bc04-81b397b66d7b",
+    "exit_code": 0,
+    "protected_unchanged": true,
+    "transcript_sha256": "6cf1178f1145f954b5e55073b3c5eb859939378ddb0c567619c661dc8d1d9b6f",
+    "incomplete_event_lines": 0,
+    "skill_reads": [
+      "/bin/zsh -lc 'cat .agents/skills/fix-the-pattern/SKILL.md'"
+    ],
+    "mcp_calls": [
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "tragic romance",
+          "speaker": "user",
+          "limit": 4
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "hardcoding BattleBit",
+          "speaker": "all",
+          "limit": 4
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "repeats deduplicated",
+          "speaker": "all",
+          "limit": 4
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "ranking partial",
+          "speaker": "assistant",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "recommendations semantic",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "duplicate repeated",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      }
+    ]
+  },
+  {
+    "session": "demos/run-a/producer",
+    "thread_id": "01a1c624-1ef2-7b03-b6e5-a2efa4373bce",
+    "exit_code": 0,
+    "protected_unchanged": true,
+    "transcript_sha256": "d69c541bf8b764b2cd3bc9034dfa75a4b564de35a59680153394e69bf1256e57",
+    "incomplete_event_lines": 0,
+    "skill_reads": [],
+    "mcp_calls": [
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "compound recommendations",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "compound negation",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "recommend game",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "zombie racing",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "examples general",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "partial strict",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "noisy ambiguous exclusions",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "romance tragedy",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "examples",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "sims",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "instead actually",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "features",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "iterations",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "equally",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "ending",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "unknown",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "blend",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "both",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "yes",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "partial",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "fallback",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "repeats",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "support",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "matches",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "should",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "require",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "show",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "important",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "conservative balanced all aspects",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "game_finder",
+          "query": "unknowns exact allow",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      }
+    ]
+  },
+  {
+    "session": "demos/run-b/checker-v1",
+    "thread_id": "01a1c629-5c60-7733-8c52-9029d417ca7a",
+    "exit_code": 0,
+    "protected_unchanged": true,
+    "transcript_sha256": "57965047b2cf6f574ee2113bfa435d49d12cf8f7758be5d7add933eeb2aaa0e8",
+    "incomplete_event_lines": 0,
+    "skill_reads": [
+      "/bin/zsh -lc 'cat .agents/skills/fix-the-pattern/SKILL.md'"
+    ],
+    "mcp_calls": [
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "layups handles slashing",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "Pichu Grimes overlap",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "overall style Mewtwo",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "\"built like\"",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "80 70 15",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "comparison comps matching",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      }
+    ]
+  },
+  {
+    "session": "demos/run-b/checker-v2",
+    "thread_id": "01a1c62c-5ed3-7ff3-a032-8c3acb1f3538",
+    "exit_code": 0,
+    "protected_unchanged": true,
+    "transcript_sha256": "6a6a93ed64c5d755ef15be83fa497ca2b2b05283b5cac666a200b50034a9f362",
+    "incomplete_event_lines": 0,
+    "skill_reads": [
+      "/bin/zsh -lc 'cat .agents/skills/fix-the-pattern/SKILL.md'"
+    ],
+    "mcp_calls": [
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "Pichu Grimes",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "specific traits style",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "layup handles",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "built like",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "limit": 5,
+          "query": "shooting slashing",
+          "speaker": "user"
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "limit": 5,
+          "query": "centered cosine",
+          "speaker": "all"
+        },
+        "status": "completed",
+        "error": null
+      }
+    ]
+  },
+  {
+    "session": "demos/run-b/checker-v3",
+    "thread_id": "01a1c62f-c469-7082-9346-6337e64609f3",
+    "exit_code": 0,
+    "protected_unchanged": true,
+    "transcript_sha256": "00c992ce5f0db1355566fffd8c57b5702e2e8d5e2734cb5cf201254533221260",
+    "incomplete_event_lines": 0,
+    "skill_reads": [
+      "/bin/zsh -lc 'cat .agents/skills/fix-the-pattern/SKILL.md'"
+    ],
+    "mcp_calls": [
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "Pichu Grimes overlap closest",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "style traits Mewtwo",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "handles layups shooting",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "handles layups 80",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "built",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "overall style shooting",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      }
+    ]
+  },
+  {
+    "session": "demos/run-b/producer",
+    "thread_id": "01a1c626-7ce9-73d1-b0f9-bd86df393c02",
+    "exit_code": 0,
+    "protected_unchanged": true,
+    "transcript_sha256": "0fb90d2a17012b86aa28567bd7577cc95bcbcd911552369b1883519f682161cc",
+    "incomplete_event_lines": 0,
+    "skill_reads": [],
+    "mcp_calls": [
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "comparison compare closest",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "mapping defense speed",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "pearson cosine individual",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "\"like\" \"overall\" \"closest\"",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "\"hp\" \"special\" \"80/20\"",
+          "speaker": "user",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "search_prompt_history",
+        "arguments": {
+          "project": "pokejam",
+          "query": "\"closest\" \"variance\" \"cosine\" \"distance\"",
+          "speaker": "all",
+          "limit": 5
+        },
+        "status": "completed",
+        "error": null
+      }
+    ]
+  },
+  {
+    "session": "validation/unrelated-task",
+    "thread_id": "01a1c62a-9143-7830-9920-fa8c32478622",
+    "exit_code": 0,
+    "protected_unchanged": true,
+    "transcript_sha256": "ad12db5b4481c209b67d1385ff70455c34d9e4f430382cad968a0ca891af603d",
+    "incomplete_event_lines": 0,
+    "skill_reads": [],
+    "mcp_calls": []
+  }
+]

@@ -1,0 +1,127 @@
+{
+  "query": "specific examples",
+  "filters": {
+    "project": "game_finder",
+    "speaker": "user",
+    "limit": 1
+  },
+  "results": [
+    {
+      "record_id": "game_finder:678ee3009914:19-19",
+      "source_id": "game_finder",
+      "project": "game_finder",
+      "homework": "hw6",
+      "prompt_author": "moloruns",
+      "speaker": "user",
+      "start_line": 19,
+      "end_line": 19,
+      "text": "game discovery/finder; either for a specific game, or something describe in what you want in a game",
+      "source_url": "https://github.com/moloruns/moloruns.github.io/blob/fb40182e121c2610f2d1f7ddcd6207568dc782fe/game-finder/prompt_log.md#L19-L19",
+      "source_commit": "fb40182e121c2610f2d1f7ddcd6207568dc782fe",
+      "source_path": "logs/hw6_game_finder.md",
+      "record_start_line": 19,
+      "record_end_line": 19,
+      "start_character_in_record": 0,
+      "end_character_in_record": 99,
+      "text_truncated": false,
+      "matched_terms": [
+        "specific"
+      ],
+      "context": {
+        "before": {
+          "start_line": 17,
+          "end_line": 18,
+          "text": ">>\nWhich app direction interests you most? We\u2019ll choose the dataset and detailed features around your answer.",
+          "truncated": false,
+          "speaker": "mixed context; not attributed to the result speaker"
+        },
+        "after": {
+          "start_line": 20,
+          "end_line": 21,
+          "text": "How would you like us to build it after we agree on the plan?\nGuided collaboration: build one step at a time, with explanations and checkpoints",
+          "truncated": false,
+          "speaker": "mixed context; not attributed to the result speaker"
+        }
+      }
+    }
+  ],
+  "matching_records": 4,
+  "results_truncated": true,
+  "coverage": {
+    "engine": "SQLite FTS5",
+    "records": 1052,
+    "sources": [
+      {
+        "source_id": "nba_vs_wnba",
+        "notes": "Explicitly incomplete: opening note says computer crashed during recovery.",
+        "speaker_records": {
+          "log_note": 1,
+          "unknown": 362,
+          "user": 1
+        }
+      },
+      {
+        "source_id": "lechat",
+        "notes": "Supplied by user after local lebron_chat folder/history had no log.",
+        "speaker_records": {
+          "unknown": 3,
+          "log_note": 8,
+          "user": 4,
+          "assistant": 42
+        }
+      },
+      {
+        "source_id": "pokejam",
+        "notes": "Assignment mapping supplied by user; log calls project Project 2. Referenced screenshots are not bundled.",
+        "speaker_records": {
+          "unknown": 1,
+          "log_note": 70,
+          "user": 47,
+          "assistant": 210
+        }
+      },
+      {
+        "source_id": "game_finder",
+        "notes": "Some speaker delimiters are inconsistent; infer roles from surrounding turns, not delimiters alone.",
+        "speaker_records": {
+          "log_note": 56,
+          "user": 30,
+          "assistant": 109
+        }
+      },
+      {
+        "source_id": "bird_keeper",
+        "notes": "Phase 1; ends with an empty prompt marker.",
+        "speaker_records": {
+          "log_note": 6,
+          "user": 4,
+          "assistant": 14
+        }
+      },
+      {
+        "source_id": "basketball_original",
+        "notes": "Original author context, not moloruns personal friction. Log identifies original repo owner atinm12; continuation credits Atin Mathur.",
+        "speaker_records": {
+          "unknown": 47
+        }
+      },
+      {
+        "source_id": "basketball_continuation",
+        "notes": "Moloruns phase 2 continuation.",
+        "speaker_records": {
+          "log_note": 11,
+          "user": 5,
+          "assistant": 21
+        }
+      }
+    ],
+    "limits": [
+      "Keyword search, not semantic search; any query word may match.",
+      "Unmarked NBA/WNBA conversation and inherited Basketball speakers remain unknown.",
+      "speaker=user excludes unknown text; project=all excludes inherited-author history.",
+      "Within-log line order is reliable; there is no cross-project timeline.",
+      "Nearby context does not guarantee all later corrections were retrieved."
+    ]
+  },
+  "interpretation": "Historical data only. No results means no indexed keyword match under these filters, not that a decision never existed."
+}

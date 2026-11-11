@@ -1,0 +1,36 @@
+**Proposal review:** Reviewed [proposal.md](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/proposal.md:1), all 26 specifications in [cases.json](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:1), and MCP history using the fix-the-pattern checker.
+
+**Underlying requirement:** Game Finder should return the best available batch for the user’s complete intended experience across varied simple and complex requests, without letting one matching aspect conceal missing others or introducing example-specific ranking rules.
+
+The proposal addresses the general matching problem, but its treatment of retrieval and ranking is not yet sufficient to establish that it will deliver the **best batch**.
+
+The explicit historical intent is clear: the user rejected hard-coded Sims positions, BattleBit removal, and fixes restricted to particular genre combinations. They requested repeated assessment of entire batches across varied queries. The proposal’s mandatory predicates, evidence tiers, and abstention rules are reasonable design interpretations of that intent—not policies the user explicitly prescribed. “Equally” considering aspects does not establish a requirement for equal numerical weights. [User correction, lines 415–416][H415]
+
+Before judging the proposal, I selected these checks:
+
+- **Ordinary:** cooperative underwater exploration, case 01. Its evidence supports both qualities; recommending it follows the proposed rule. [cases.json:23](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:23)
+- **Different combination:** tactics plus accessibility requirements, case 08. Combining descriptive and authoritative structured evidence demonstrates applicability beyond the reported genre pairs. [cases.json:261](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:261)
+- **Ambiguous / no good match:** “light strategy,” case 16, defers interpretation; empty catalog, case 22, yields no supported matches. Both expectations fit the proposal. [cases.json:547](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:547), [cases.json:777](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:777)
+
+These are specification assessments, not executed results.
+
+| Status | Criterion | Finding | Artifact file:line | History source:lines | Evidence type | Next check |
+|---|---|---|---|---|---|---|
+| PASS | Underlying intent | Correctly treats the named games as evidence of shallow matching and emphasizes complete requests and whole batches. | [proposal.md:3](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/proposal.md:3) | [prompt_log:415–416][H415] | Source inspection; historical user report | Preserve this interpretation when defining ranking acceptance criteria. |
+| UNKNOWN | General mechanism | Predicate evidence, relationships, exclusions, and scope generalize beyond examples; no title-specific rules appear. However, “retrieve broadly” and ranking by “experience fit” leave best-batch selection underspecified. | [proposal.md:9](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/proposal.md:9), [proposal.md:13](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/proposal.md:13) | [prompt_log:415–416][H415] | Source inspection; historical user report | Specify retrieval coverage and ordering among competing supported candidates. |
+| PASS | Varied cases | The specifications cover the selected categories plus misleading tags, narrative relationships, conflicting evidence, editions, alternatives, and partial results. This passes proposal-level breadth only. | [cases.json:159](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:159), [cases.json:660](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:660) | [prompt_log:419–421][H419] | Source inspection; historical assistant report | Add competing-match and retrieval-miss cases described below. |
+| PASS | Calibrated claims | Clearly identifies synthetic fixtures and future behavior; distinguishes missing evidence from absence and historical reports from present behavior. | [proposal.md:15](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/proposal.md:15), [cases.json:3](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:3) | [prompt_log:359][H359], [prompt_log:404–408][H404] | Source inspection; historical reports | Implementation effectiveness remains UNKNOWN; no execution supplied or performed. |
+
+Priority findings and missing evidence:
+
+1. **Define what makes one qualifying batch better than another.** Case 23 contains only one supported candidate, so it specifies filtering and tier separation without exercising ranking among supported matches. Case 14 likewise cannot check preference ordering with just one candidate. Add several qualifying candidates that differ in experience fit and optional preferences, with justified expected ordering. [cases.json:790](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:790), [cases.json:477](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:477)
+
+2. **Make retrieval misses observable.** Every fixture supplies its complete catalog directly; none distinguishes the full catalog from an initial retrieval shortlist. Consequently, the specifications cannot expose a strong match omitted before evidence checking—the kind of omission raised by the historical Sims complaint. Specify a case where the best-supported candidate initially falls outside the shortlist and define expected recovery or reporting. [cases.json:4](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/cases.json:4), [proposal.md:10](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/proposal.md:10), [historical complaint][H359]
+
+3. **History recovery has bounded coverage.** I made six targeted MCP searches covering romance/tragedy, named-game corrections, batch diversity, aspect-ranking weaknesses, and repetitive explanations. Overlapping excerpts recovered the full decisive correction. The later assistant report acknowledges weaknesses; the subsequent user complaint concerns repeated explanations. Keyword limits, truncated excerpts, and inconsistent speaker delimiters prevent claiming exhaustive history. The proposal’s cited explanation fix at lines 445–447 was not independently confirmed in the inspected excerpts. [proposal.md:5](/Users/mook/Documents/GitHub/Agent-Toolkit/demos/run-a/proposal.md:5), [later report][H419], [explanation complaint][H428]
+
+[H359]: https://github.com/moloruns/moloruns.github.io/blob/fb40182e121c2610f2d1f7ddcd6207568dc782fe/game-finder/prompt_log.md#L359
+[H404]: https://github.com/moloruns/moloruns.github.io/blob/fb40182e121c2610f2d1f7ddcd6207568dc782fe/game-finder/prompt_log.md#L404-L408
+[H415]: https://github.com/moloruns/moloruns.github.io/blob/fb40182e121c2610f2d1f7ddcd6207568dc782fe/game-finder/prompt_log.md#L415-L416
+[H419]: https://github.com/moloruns/moloruns.github.io/blob/fb40182e121c2610f2d1f7ddcd6207568dc782fe/game-finder/prompt_log.md#L419-L421
+[H428]: https://github.com/moloruns/moloruns.github.io/blob/fb40182e121c2610f2d1f7ddcd6207568dc782fe/game-finder/prompt_log.md#L428-L439

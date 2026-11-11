@@ -1,0 +1,76 @@
+{
+  "engine": "SQLite FTS5",
+  "records": 1052,
+  "sources": [
+    {
+      "source_id": "nba_vs_wnba",
+      "notes": "Explicitly incomplete: opening note says computer crashed during recovery.",
+      "speaker_records": {
+        "log_note": 1,
+        "unknown": 362,
+        "user": 1
+      }
+    },
+    {
+      "source_id": "lechat",
+      "notes": "Supplied by user after local lebron_chat folder/history had no log.",
+      "speaker_records": {
+        "unknown": 3,
+        "log_note": 8,
+        "user": 4,
+        "assistant": 42
+      }
+    },
+    {
+      "source_id": "pokejam",
+      "notes": "Assignment mapping supplied by user; log calls project Project 2. Referenced screenshots are not bundled.",
+      "speaker_records": {
+        "unknown": 1,
+        "log_note": 70,
+        "user": 47,
+        "assistant": 210
+      }
+    },
+    {
+      "source_id": "game_finder",
+      "notes": "Some speaker delimiters are inconsistent; infer roles from surrounding turns, not delimiters alone.",
+      "speaker_records": {
+        "log_note": 56,
+        "user": 30,
+        "assistant": 109
+      }
+    },
+    {
+      "source_id": "bird_keeper",
+      "notes": "Phase 1; ends with an empty prompt marker.",
+      "speaker_records": {
+        "log_note": 6,
+        "user": 4,
+        "assistant": 14
+      }
+    },
+    {
+      "source_id": "basketball_original",
+      "notes": "Original author context, not moloruns personal friction. Log identifies original repo owner atinm12; continuation credits Atin Mathur.",
+      "speaker_records": {
+        "unknown": 47
+      }
+    },
+    {
+      "source_id": "basketball_continuation",
+      "notes": "Moloruns phase 2 continuation.",
+      "speaker_records": {
+        "log_note": 11,
+        "user": 5,
+        "assistant": 21
+      }
+    }
+  ],
+  "limits": [
+    "Keyword search, not semantic search; any query word may match.",
+    "Unmarked NBA/WNBA conversation and inherited Basketball speakers remain unknown.",
+    "speaker=user excludes unknown text; project=all excludes inherited-author history.",
+    "Within-log line order is reliable; there is no cross-project timeline.",
+    "Nearby context does not guarantee all later corrections were retrieved."
+  ]
+}

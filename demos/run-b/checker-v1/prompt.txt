@@ -1,0 +1,3 @@
+Review demos/run-b/proposal.md and demos/run-b/cases.json for whether the proposed fix addresses the underlying PokeJam comparison problem beyond the examples that exposed it. Understanding the user's intent is the priority. This is a proposal review, not a claim about the live app.
+
+Use the appropriate available checker skill and recover relevant source history through the prompt_history MCP tool (about 3–6 targeted searches, noting any remaining gaps). Your review context is fresh. Read only the checker, these two artifacts, and history returned by the MCP tool; do not read producer transcripts, handoff analysis, other reviews, or other demo runs. Report in chat only, with source locations. Do not modify any files or run application code.

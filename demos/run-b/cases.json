@@ -1,0 +1,169 @@
+{
+  "purpose": "Proposed regression specifications; not executions or historical outputs",
+  "data_status": "All numerical profiles and candidate names are synthetic. No real NBA player or Pokemon ratings are asserted.",
+  "profile_contract": {
+    "scale": "Fixed shared 0-100 mapped attribute scale, before any per-profile centering",
+    "axes": ["speed", "shooting", "dunk", "layups", "handles", "defense"],
+    "scope": "Illustrative six-axis fixture schema, not a claim about the current app's complete attribute schema",
+    "ranking": "Ascending equal-weight root-mean-square gap for these fixtures only",
+    "quality_diagnostics": ["root_mean_square_gap", "absolute_mean_level_gap", "maximum_absolute_attribute_gap"],
+    "production_thresholds": null,
+    "production_weights": null,
+    "threshold_status": "Provisional until measured. Expected judgments are qualitative design targets; these fixtures do not establish cutoff values.",
+    "flatness_policy": "Suppress centered shape claims when either profile lacks meaningful spread; exact zero centered norm must not produce NaN or a fabricated similarity."
+  },
+  "cases": [
+    {
+      "id": "same_shape_different_levels",
+      "inputs": {
+        "query": [10, 20, 30, 20, 10, 30],
+        "candidates": [{"id": "high_parallel", "profile": [70, 80, 90, 80, 70, 90]}]
+      },
+      "expected_judgments": {
+        "closest_available": "high_parallel",
+        "whole_profile_quality": "not_close",
+        "shape": "Identical centered pattern; insufficient for a close comparison",
+        "root_mean_square_gap": 60,
+        "absolute_mean_level_gap": 60,
+        "maximum_absolute_attribute_gap": 60,
+        "required_message": "No close comparison in this pool. Closest available: high_parallel."
+      },
+      "rationale": "A shared pattern at a radically different level must not be promoted to a good match merely because it ranks first."
+    },
+    {
+      "id": "nearly_flat_profiles",
+      "inputs": {
+        "query": [95, 94.9, 95.1, 95, 94.9, 95.1],
+        "candidates": [
+          {"id": "flat_neighbor", "profile": [95, 95.1, 94.9, 95, 95.1, 94.9]},
+          {"id": "amplified_pattern", "profile": [50, 20, 80, 50, 20, 80]}
+        ],
+        "perturbed_query": [95, 95.1, 94.9, 95, 95.1, 94.9]
+      },
+      "expected_judgments": {
+        "closest_available_before_and_after_perturbation": "flat_neighbor",
+        "whole_profile_quality": "close",
+        "shape": "No reliable directional style claim for the query",
+        "amplified_pattern_quality": "not_close",
+        "invariant": "Tiny perturbations cannot produce confident opposing archetype labels."
+      },
+      "rationale": "Centering can amplify tiny differences into strong shape scores. Near-equal absolute profiles should remain close even when centered directions reverse."
+    },
+    {
+      "id": "exactly_flat_profiles",
+      "inputs": {
+        "query": [60, 60, 60, 60, 60, 60],
+        "candidates": [{"id": "flat_equal", "profile": [60, 60, 60, 60, 60, 60]}]
+      },
+      "expected_judgments": {
+        "closest_available": "flat_equal",
+        "whole_profile_quality": "close",
+        "root_mean_square_gap": 0,
+        "shape": "undefined; show no distinctive spread",
+        "invariant": "No division-by-zero failure, NaN display, or fabricated perfect style score."
+      },
+      "rationale": "An undefined shape statistic must not prevent a valid absolute match."
+    },
+    {
+      "id": "close_match",
+      "inputs": {
+        "query": [80, 60, 40, 70, 75, 30],
+        "candidates": [
+          {"id": "near_neighbor", "profile": [81, 59, 41, 69, 76, 31]},
+          {"id": "distant_neighbor", "profile": [30, 20, 10, 20, 25, 80]}
+        ]
+      },
+      "expected_judgments": {
+        "closest_available": "near_neighbor",
+        "whole_profile_quality": "close",
+        "root_mean_square_gap": 1,
+        "maximum_absolute_attribute_gap": 1,
+        "required_message": "Close attribute-profile comparison: near_neighbor.",
+        "forbidden_implication": "Identical real-world playing style or guaranteed equivalence"
+      },
+      "rationale": "A genuinely nearby candidate should receive positive quality language, with its scope limited to mapped attributes."
+    },
+    {
+      "id": "no_close_candidate_and_pool_change",
+      "inputs": {
+        "query": [10, 20, 10, 20, 10, 20],
+        "candidates": [
+          {"id": "far_a", "profile": [70, 60, 70, 60, 70, 60]},
+          {"id": "far_b", "profile": [90, 80, 90, 80, 90, 80]}
+        ],
+        "pool_mutation": {"remove_candidate": "far_a"}
+      },
+      "expected_judgments": {
+        "closest_available_initially": "far_a",
+        "closest_available_after_removal": "far_b",
+        "whole_profile_quality_before_and_after": "not_close",
+        "required_message": "No close comparison in this pool; label any displayed winner closest available.",
+        "invariant": "Changing rank or pool size alone cannot improve a fixed pair's quality judgment."
+      },
+      "rationale": "A fallback must remain honest even when every eligible candidate is distant."
+    },
+    {
+      "id": "trait_match_does_not_imply_whole_profile_match",
+      "inputs": {
+        "query": [20, 90, 20, 20, 20, 20],
+        "candidates": [{"id": "shooting_neighbor", "profile": [80, 90, 80, 80, 80, 80]}],
+        "trait_scope": ["shooting"]
+      },
+      "expected_judgments": {
+        "closest_available": "shooting_neighbor",
+        "whole_profile_quality": "not_close",
+        "shooting_trait_quality": "close",
+        "shooting_gap": 0,
+        "allowed_description": "Close shooting-attribute comparison",
+        "forbidden_description": "Same overall style or close scoring comparison inferred from shooting alone"
+      },
+      "rationale": "Specific trait resemblance can coexist with a poor whole-profile match; scoring additionally needs dunk and layup evidence."
+    },
+    {
+      "id": "preserve_deliberate_mappings",
+      "inputs": {
+        "stage": "Controlled common-scale inputs to the mapping blend, before downstream transformations",
+        "base_stats": {"speed": 80, "defense": 20, "special_defense": 100, "attack": 40, "special_attack": 90},
+        "independent_variants": [
+          {"change": "special_defense", "value": 0},
+          {"change": "defense", "value": 40},
+          {"change": "attack", "value": 60},
+          {"change": "speed", "value": 90},
+          {"change": "special_attack", "value": 70}
+        ]
+      },
+      "expected_judgments": {
+        "base_handles_blend": 68,
+        "handles_with_special_defense_zero": 68,
+        "handles_with_defense_40": 72,
+        "handles_with_speed_90": 76,
+        "shooting_source": "Special Attack; changing Attack alone must not substitute it",
+        "layup_sources": ["attack", "speed"],
+        "layup_weights": "Unresolved; assert both sources participate without inventing a historical split",
+        "scoring_scope": "Include layups alongside shooting and dunking",
+        "mapping_changes_to_force_named_matches": "forbidden"
+      },
+      "rationale": "Protects the explicit shooting choice, layup addition, and the latest retrieved handles correction over the earlier 70/15/15 suggestion. Blend expectations are not claims about final displayed ratings."
+    },
+    {
+      "id": "nba_search_omits_built_like",
+      "inputs": {
+        "direction": "NBA_to_Pokemon",
+        "query": [80, 60, 40, 70, 75, 30],
+        "candidates": [{"id": "synthetic_mon", "profile": [80, 60, 40, 70, 75, 30]}]
+      },
+      "expected_judgments": {
+        "whole_profile_quality": "close",
+        "omitted_trait_label": "built like"
+      },
+      "rationale": "Preserves the later explicit presentation correction even for an otherwise excellent comparison."
+    }
+  ],
+  "remaining_uncertainty": [
+    "No production quality or flatness thresholds have been measured.",
+    "Current normalization, complete axis list, eligibility, grouping, and implemented fixes were not inspected.",
+    "Layup weights and mapping transformation order are not established by the retrieved evidence.",
+    "Keyword searches were bounded and sometimes truncated; unreturned later corrections remain possible.",
+    "Referenced historical screenshots were unavailable; historical named examples are not numerical fixtures."
+  ]
+}

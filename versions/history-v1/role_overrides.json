@@ -1,0 +1,17 @@
+{
+  "game_finder": [
+    {"start": 18, "end": 18, "speaker": "assistant", "reason": "Question copied into a user-marked questionnaire response."},
+    {"start": 20, "end": 20, "speaker": "assistant", "reason": "Question copied into a user-marked questionnaire response."},
+    {"start": 39, "end": 39, "speaker": "assistant", "reason": "Question copied above selected answer."},
+    {"start": 277, "end": 277, "speaker": "assistant", "reason": "Agent's documentation question copied above user's answer."},
+    {"start": 288, "end": 288, "speaker": "user", "reason": "User asks why the catalog is capped; preceding >>> delimiter conflicts with content and following answer."},
+    {"start": 291, "end": 299, "speaker": "assistant", "reason": "Agent answers the catalog-cap question, despite preceding >> delimiter."}
+  ],
+  "pokejam": [
+    {"start": 585, "end": 631, "speaker": "assistant", "reason": "Response beginning 'I read next_steps.md' lacks its own speaker delimiter."}
+  ],
+  "nba_vs_wnba": [
+    {"start": 1, "end": 1, "speaker": "log_note", "reason": "Explicit incompleteness note."},
+    {"start": 4, "end": 4, "speaker": "user", "reason": "Opening app request precedes the assistant response. Remaining unmarked conversation is unknown."}
+  ]
+}

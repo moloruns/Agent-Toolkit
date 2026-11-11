@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "prompt-history",
+      "version": ""
+    }
+  },
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"coverage\": \"transport probe: one excerpt only\",\n  \"results\": [\n    {\n      \"id\": \"E01\",\n      \"title\": \"The user explicitly asks for a general fix\",\n      \"source_id\": \"game_finder\",\n      \"source_path\": \"logs/hw6_game_finder.md\",\n      \"start_line\": 416,\n      \"end_line\": 416,\n      \"speaker\": \"user\",\n      \"prompt_author\": \"moloruns\",\n      \"quote\": \"Don't just fix specific examples, but look at the model itself, then see how the app outputs.\",\n      \"excerpt_type\": \"exact substring\",\n      \"interpretation\": \"Primary checker motivation. Read lines 415–423 for the clarification and later agent response.\",\n      \"source_url\": \"https://github.com/moloruns/moloruns.github.io/blob/fb40182e121c2610f2d1f7ddcd6207568dc782fe/game-finder/prompt_log.md#L416-L416\"\n    }\n  ]\n}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structured_content": null,
+  "is_error": false,
+  "result_type": "complete"
+}

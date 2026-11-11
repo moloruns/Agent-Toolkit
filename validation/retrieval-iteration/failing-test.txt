@@ -1,0 +1,28 @@
+test_bounds_and_exact_excerpt_offsets (test_history.HistoryTests.test_bounds_and_exact_excerpt_offsets) ... ok
+test_compound_query_and_relevant_excerpt (test_history.HistoryTests.test_compound_query_and_relevant_excerpt) ... FAIL
+test_every_record_is_an_exact_physical_line_slice (test_history.HistoryTests.test_every_record_is_an_exact_physical_line_slice) ... ok
+test_evidence_attribution (test_history.HistoryTests.test_evidence_attribution) ... ok
+test_inherited_author_is_never_default_personal_history (test_history.HistoryTests.test_inherited_author_is_never_default_personal_history) ... ok
+test_invalid_inputs (test_history.HistoryTests.test_invalid_inputs) ... ok
+test_literal_query_does_not_inject_fts (test_history.HistoryTests.test_literal_query_does_not_inject_fts) ... ok
+test_no_match_is_explicit (test_history.HistoryTests.test_no_match_is_explicit) ... ok
+test_old_and_new_decisions_are_retrievable (test_history.HistoryTests.test_old_and_new_decisions_are_retrievable) ... ok
+test_search_beyond_selected_evidence (test_history.HistoryTests.test_search_beyond_selected_evidence) ... ok
+test_tampered_source_is_rejected (test_history.HistoryTests.test_tampered_source_is_rejected) ... ok
+test_token_fallback (test_history.HistoryTests.test_token_fallback) ... ok
+test_wrong_and_missing_delimiters (test_history.HistoryTests.test_wrong_and_missing_delimiters) ... ok
+
+======================================================================
+FAIL: test_compound_query_and_relevant_excerpt (test_history.HistoryTests.test_compound_query_and_relevant_excerpt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/tests/test_history.py", line 44, in test_compound_query_and_relevant_excerpt
+    self.assertEqual(set(top['matched_terms']), {'specific', 'examples'})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'examples'
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.117s
+
+FAILED (failures=1)

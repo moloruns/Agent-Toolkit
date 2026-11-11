@@ -1,0 +1,1 @@
+Use the prompt_history MCP server's search_prompt_history tool with query "specific examples", project "game_finder", speaker "user", limit 1. Report its exact quote, source location, and stated coverage. This is an integration probe; do not read the corpus or Python source directly and do not change files. If the MCP tool is unavailable, report that limitation.

@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"01a1c61e-085d-7b80-a3d6-617b62583d8a"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll check for the MCP tool and run the search with your exact parameters if it’s available.\n"}}
+{"type":"item.started","item":{"id":"item_1","type":"mcp_tool_call","server":"prompt_history","tool":"search_prompt_history","arguments":{"query":"specific examples","project":"game_finder","speaker":"user","limit":1},"result":null,"error":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_1","type":"mcp_tool_call","server":"prompt_history","tool":"search_prompt_history","arguments":{"query":"specific examples","project":"game_finder","speaker":"user","limit":1},"result":null,"error":{"message":"MCP tool call requires approval, but approval policy is never"},"status":"failed"}}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"The MCP tool was found, but automatic approval review blocked the search: “MCP tool call requires approval, but approval policy is never.”\n\nNo result was returned, so I cannot report an exact quote or source location. The tool’s description states its coverage as: “Initial transport probe: searches one Game Finder record. Coverage is explicit.”\n\nI did not read the corpus or Python source, or change any files."}}
+{"type":"turn.completed","usage":{"input_tokens":42855,"cached_input_tokens":38272,"cache_write_input_tokens":0,"output_tokens":222,"reasoning_output_tokens":0}}

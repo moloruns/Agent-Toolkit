@@ -1,0 +1,60 @@
+test_bounds_and_exact_excerpt_offsets (test_history.HistoryTests.test_bounds_and_exact_excerpt_offsets) ... ok
+test_every_record_is_an_exact_physical_line_slice (test_history.HistoryTests.test_every_record_is_an_exact_physical_line_slice) ... ok
+test_evidence_attribution (test_history.HistoryTests.test_evidence_attribution) ... ok
+test_inherited_author_is_never_default_personal_history (test_history.HistoryTests.test_inherited_author_is_never_default_personal_history) ... ok
+test_invalid_inputs (test_history.HistoryTests.test_invalid_inputs) ... ok
+test_literal_query_does_not_inject_fts (test_history.HistoryTests.test_literal_query_does_not_inject_fts) ... ok
+test_no_match_is_explicit (test_history.HistoryTests.test_no_match_is_explicit) ... ok
+test_old_and_new_decisions_are_retrievable (test_history.HistoryTests.test_old_and_new_decisions_are_retrievable) ... ok
+test_search_beyond_selected_evidence (test_history.HistoryTests.test_search_beyond_selected_evidence) ... ok
+test_tampered_source_is_rejected (test_history.HistoryTests.test_tampered_source_is_rejected) ... ok
+test_token_fallback (test_history.HistoryTests.test_token_fallback) ... ok
+test_wrong_and_missing_delimiters (test_history.HistoryTests.test_wrong_and_missing_delimiters) ... ok
+test_stdio_listing_search_and_error (test_transport.TransportTests.test_stdio_listing_search_and_error) ... Tool 'search_prompt_history' raised an unexpected exception
+Traceback (most recent call last):
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/.venv/lib/python3.13/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/.venv/lib/python3.13/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 164, in call_fn
+    return await anyio.to_thread.run_sync(functools.partial(fn, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2779, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 1124, in run
+    result = context.run(func, *args)
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/server/history_server.py", line 26, in search_prompt_history
+    return index.search(query, project, speaker, limit)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/server/history.py", line 158, in search
+    raise ValueError("unknown project; use all or a source_id from coverage")
+ValueError: unknown project; use all or a source_id from coverage
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/.venv/lib/python3.13/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/.venv/lib/python3.13/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/.venv/lib/python3.13/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mook/Documents/GitHub/Agent-Toolkit/.venv/lib/python3.13/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool search_prompt_history
+ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.817s
+
+OK
